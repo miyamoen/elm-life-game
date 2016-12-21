@@ -227,7 +227,6 @@ cellStyle state =
 rowStyle : List (Declaration number)
 rowStyle =
   [ "display" => Str "flex"
-
   ]
 
 
