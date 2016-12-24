@@ -12283,7 +12283,7 @@ var _user$project$LifeGame$NextTick = {ctor: 'NextTick'};
 var _user$project$LifeGame$subscriptions = function (game) {
 	return game.stopped ? _elm_lang$core$Platform_Sub$none : A2(
 		_elm_lang$core$Time$every,
-		_elm_lang$core$Time$second,
+		_elm_lang$core$Time$millisecond * 20,
 		_elm_lang$core$Basics$always(_user$project$LifeGame$NextTick));
 };
 var _user$project$LifeGame$ToggleState = function (a) {
@@ -12364,7 +12364,7 @@ var _user$project$LifeGame$init = A2(
 	A2(
 		_elm_lang$core$Random$generate,
 		_user$project$LifeGame$NewGame,
-		_user$project$Cells$newCells(20)),
+		_user$project$Cells$newCells(50)),
 	{cells: _user$project$Cells$empty, tick: 0, stopped: false});
 var _user$project$LifeGame$update = F2(
 	function (msg, game) {

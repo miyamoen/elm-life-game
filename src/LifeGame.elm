@@ -38,7 +38,7 @@ init =
   { cells = Cells.empty
   , tick = 0
   , stopped = False
-  } |> withCmd (Random.generate NewGame <| Cells.newCells 20)
+  } |> withCmd (Random.generate NewGame <| Cells.newCells 50)
 
 
 type Msg
@@ -89,7 +89,7 @@ subscriptions game =
   if game.stopped then
     Sub.none
   else
-    Time.every Time.second (always NextTick)
+    Time.every (Time.millisecond * 20) (always NextTick)
 
 
 view : LifeGame -> Html Msg
